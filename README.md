@@ -5,6 +5,7 @@ See APIs.md
 * [GroupInitiative](https://wiki.roll20.net/Script:Group_Initiative)
 * [Initiative Tracker](https://wiki.roll20.net/Script:Initiative_Tracker)
 * Long Rest
+* [Wild Magic Surge Tables](https://github.com/jfflbnntt/roll20-api-scripts/tree/master/WildMagicSurgeTables)
 
 ## Spells:
 See Spells.md

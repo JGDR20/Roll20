@@ -42,3 +42,10 @@ Or you can make a list of Players to affect:
 &{template:default} {{name=Long Rest}} {{[[1t[Longrest-Description]]]}}
 ```
 In the above a random entry from the custom _Longrest-Description_ table is displayed as well for a bit of flavour.
+
+## [Wild Magic Surge Tables](https://github.com/jfflbnntt/roll20-api-scripts/tree/master/WildMagicSurgeTables)
+Rolls a d20 and, on a 20, rolls on the Wild Magic Surge table, displaying the result in the chat. For Wild Magic origin Sorcerers.
+
+I've added this as an Ability to the character sheet as well as tacking it onto the end of spell descriptions via a button as below:
+
+`[Wild Magic](!wildmagic)`
