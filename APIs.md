@@ -49,3 +49,32 @@ Rolls a d20 and, on a 20, rolls on the Wild Magic Surge table, displaying the re
 I've added this as an Ability to the character sheet as well as tacking it onto the end of spell descriptions via a button as below:
 
 `[Wild Magic](!wildmagic)`
+
+## [Bloodied and Dead Status Markers](https://github.com/Roll20/roll20-api-scripts/tree/master/Bloodied%20and%20Dead%20Status%20Markers)
+Adds a red token marker when a token reaches the 'bloodied' status (<= 50% hp) and a black cross when the token reaches 0hp.
+
+## API Check
+```
+on("ready", function() {
+  sendChat('API', "/desc STARTED");
+});
+```
+
+Adds a comment to the chat that the API has started - we completely ignore it until it doesn't appear in the chat when we start a game, at which point we know something has probably broken in the API service and to check the API Output Console for errors.
+
+## [TimeTracker](https://github.com/capekfilip/roll20-scripts/blob/master/time-tracker)
+Adds a clock comment into the chat (e.g. 17:30) to help all players and GM keep track of the in-game time. Can be used in Macros to create buttons for one-click increments eg:
+
+```
+# Set the time
+!time -set ?{hours|00}:?{minutes|00}
+
+# Add 30 minutes
+!time -plus 0:30
+
+# Add queried hours and minutes
+!time -plus ?{hours|0}:?{minutes|0}
+
+# Show the current in-game time
+!time -show
+```
