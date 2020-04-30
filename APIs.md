@@ -78,3 +78,40 @@ Adds a clock comment into the chat (e.g. 17:30) to help all players and GM keep 
 # Show the current in-game time
 !time -show
 ```
+
+## [TokenMod](https://github.com/Roll20/roll20-api-scripts/tree/master/TokenMod)
+Available in the script library, allows you to set token attributes.
+Use with [ChangeTokenImage](#ChangeTokenImage) to have one rollable token with each side corresponding to a different character sheet.  
+Very useful for Druid Beastshape.
+
+```
+!token-mod {{ 
+	--set
+	?{Choose Form|Tiefling,0 represents#@{Zelithia Venbys|character_id} bar1# bar1_link#hp bar2_link#ac bar3_link#hp_temp name#"Zelithia" showname#yes 
+		|Dire Wolf,1 represents#@{Dire Wolf (Zelithia)|character_id} bar1_link# bar2_link#npc_ac bar3_link# bar1#[[5d10+10]] name#"Zelithia (BeastShaped)" showname#yes  
+		|Brown Bear,2 represents#@{Zelithia Brown Bear|character_id} bar1_link# bar2_link#npc_ac bar3_link# bar1#[[4d10+12]] name#"Zelithia (BeastShaped)" showname#yes 
+	}
+}}
+!change-token-img --set ?{Choose Form}
+```
+
+1. Create a rollable token in the Collections menu
+1. Make sure unique character sheets are available for all the different forms (including the 'normal' form)
+1. Copy the above into a Macro and edit the options as needed
+  1. `?{Choose Form|Tiefling,0` begins a dropdown query for the user
+    * `Tiefling` is the label of the option
+	* `0` is the 'side' of the dice (beginning at 0) with the image wanted
+  1. `#` replaces `|` within the dropdown query to avoid confusing with the dropdown list
+  1. `represents#@{Zelithia Venbys|character_id}` links the token to the character sheet 'Zelithia Venbys'
+  1. `bar1# bar1_link#hp bar2_link#ac bar3_link#hp_temp name#"Zelithia" showname#yes` sets the token bar properties
+	* `bar1#` blanks Bar 1 (HP)
+	* `bar1_link#hp` links Bar 1 to the character sheet HP values (this will use both the current and max HP from the PC sheet)
+	* `name#"Zelithia"` showname#yes` sets the display name and makes it visible
+	* NOTE: This is a Player Character Sheet
+  1. `bar1#[[5d10+10]]` rolls for the hp of an NPC sheet and sets this as both the current and max values
+1. Whenever the token needs to change, run the macro and choose the option required.
+
+**NOTE:** The person running the macro needs to create the rollable token with images from their own library! This will *not* work with marketplace assets unless they are downloaded and reuploaded as a user asset.
+
+## [ChangeTokenImage](https://github.com/Roll20/roll20-api-scripts/tree/master/ChangeTokenImage)
+Available in the script library. Changes the token image.

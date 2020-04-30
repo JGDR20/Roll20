@@ -9,6 +9,8 @@ See APIs.md
 * [Bloodied and Dead Status Markers](https://github.com/Roll20/roll20-api-scripts/tree/master/Bloodied%20and%20Dead%20Status%20Markers)
 * API Check
 * [TimeTracker](https://github.com/capekfilip/roll20-scripts/blob/master/time-tracker)
+* [TokenMod](https://github.com/Roll20/roll20-api-scripts/tree/master/TokenMod) - available in Script Library
+* [ChangeTokenImage](https://github.com/Roll20/roll20-api-scripts/tree/master/ChangeTokenImage) - available in Script Library
 
 ## Spells:
 See Spells.md
