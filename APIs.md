@@ -100,14 +100,14 @@ Very useful for Druid Beastshape.
 1. Copy the above into a Macro and edit the options as needed
   1. `?{Choose Form|Tiefling,0` begins a dropdown query for the user
     * `Tiefling` is the label of the option
-	* `0` is the 'side' of the dice (beginning at 0) with the image wanted
+    * `0` is the 'side' of the dice (beginning at 0) with the image wanted
   1. `#` replaces `|` within the dropdown query to avoid confusing with the dropdown list
   1. `represents#@{Zelithia Venbys|character_id}` links the token to the character sheet 'Zelithia Venbys'
   1. `bar1# bar1_link#hp bar2_link#ac bar3_link#hp_temp name#"Zelithia" showname#yes` sets the token bar properties
-	* `bar1#` blanks Bar 1 (HP)
-	* `bar1_link#hp` links Bar 1 to the character sheet HP values (this will use both the current and max HP from the PC sheet)
-	* `name#"Zelithia"` showname#yes` sets the display name and makes it visible
-	* NOTE: This is a Player Character Sheet
+    * `bar1#` blanks Bar 1 (HP)
+    * `bar1_link#hp` links Bar 1 to the character sheet HP values (this will use both the current and max HP from the PC sheet)
+    * `name#"Zelithia"` showname#yes` sets the display name and makes it visible
+    * NOTE: This is a Player Character Sheet
   1. `bar1#[[5d10+10]]` rolls for the hp of an NPC sheet and sets this as both the current and max values
 1. Whenever the token needs to change, run the macro and choose the option required.
 
